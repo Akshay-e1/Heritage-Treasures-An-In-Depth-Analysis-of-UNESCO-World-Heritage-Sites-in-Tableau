@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UNESCO Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <style>
+    /* Optional inline styles for better visuals */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>UNESCO Heritage Sites Dashboard</h1>
+
+    <!-- Tableau Embed -->
+    <div class="tableauPlaceholder" id="vizContainer" style="position: relative">
+      <noscript>
+        <a href="#"><img alt="Dashboard" src="https://public.tableau.com/static/images/Bo/Book1_17534658638470/Dashboard1/1_rss.png" style="border: none" /></a>
+      </noscript>
+      <object class="tableauViz" style="display:none;">
+        <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+        <param name="embed_code_version" value="3" />
+        <param name="site_root" value="" />
+        <param name="name" value="Book1_17534658638470/Dashboard1" />
+        <param name="tabs" value="no" />
+        <param name="toolbar" value="yes" />
+        <param name="static_image" value="https://public.tableau.com/static/images/Bo/Book1_17534658638470/Dashboard1/1.png" />
+        <param name="animate_transition" value="yes" />
+        <param name="display_static_image" value="yes" />
+        <param name="display_spinner" value="yes" />
+        <param name="display_overlay" value="yes" />
+        <param name="display_count" value="yes" />
+        <param name="language" value="en-US" />
+        <param name="filter" value="publish=yes" />
+      </object>
+    </div>
+
+    <script type="text/javascript">
+      const container = document.getElementById("vizContainer");
+      const viz = container.getElementsByTagName("object")[0];
+
+      if (container.offsetWidth > 800) {
+        viz.style.minWidth = "420px";
+        viz.style.maxWidth = "1000px";
+        viz.style.width = "100%";
+        viz.style.height = (container.offsetWidth * 0.75) + "px";
+      } else if (container.offsetWidth > 500) {
+        viz.style.width = "100%";
+        viz.style.height = "900px";
+      } else {
+        viz.style.width = "100%";
+        viz.style.height = "1400px";
+      }
+
+      const script = document.createElement("script");
+      script.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+      viz.parentNode.insertBefore(script, viz);
+    </script>
+  </div>
+</body>
+</html>
